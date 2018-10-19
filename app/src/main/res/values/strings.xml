@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">ViewControllerGitLabOpener</string>
+    <string name="ticket_name">Ticket Number</string>
+    <string name="open_ticket">Open Ticket</string>
+    <string name="merge_requests">MRs</string>
+    <string name="new_ticket">New Ticket</string>
+    <string name="search">Search</string>
+    <string name="wiki">Wiki</string>
+    <string name="engineering">Engineering</string>
+    <string name="crimp_iq">CrimpIQ</string>
+    <string name="crimp_cloud">CrimpCloud</string>
+    <string name="my_crimp">MyCrimp</string>
+
 </resources>
