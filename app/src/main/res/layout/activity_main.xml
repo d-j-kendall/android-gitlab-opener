@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -23,21 +24,23 @@
             tools:context=".MainActivity">-->
 
         <RadioButton
-            android:id="@+id/rB"
+            android:id="@+id/engineering"
             style="@style/Widget.AppCompat.CompoundButton.RadioButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/engineering"
-            android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+            android:onClick="onRadioSelect"/>
 
         <RadioButton
-            android:id="@+id/rB2"
+            android:id="@+id/crimpIq"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/crimp_iq"
-            android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+            android:onClick="onRadioSelect"/>
 
 
         <!-- </LinearLayout>-->
@@ -52,20 +55,22 @@
             tools:context=".MainActivity">-->
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/crimpCloud"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/crimp_cloud"
-            android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+            android:onClick="onRadioSelect"/>
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/myCrimp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/my_crimp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+            android:onClick="onRadioSelect"/>
         <!--</LinearLayout>-->
     </RadioGroup>
     <EditText
@@ -75,7 +80,8 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/ticket_name" />
+        android:text="@string/ticket_name"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,13 +99,15 @@
                 android:id="@+id/open_ticket"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/open_ticket" />
+                android:text="@string/open_ticket"
+                android:onClick="onOpenTicket"/>
 
             <Button
                 android:id="@+id/merge_requests"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/merge_requests" />
+                android:text="@string/merge_requests"
+                android:onClick="onMergeRequest"/>
         </LinearLayout>
 
         <LinearLayout
@@ -112,13 +120,15 @@
                 android:id="@+id/new_ticket"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/new_ticket" />
+                android:text="@string/new_ticket"
+                android:onClick="onNewTicket"/>
 
             <Button
                 android:id="@+id/wiki"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/wiki" />
+                android:text="@string/wiki"
+                android:onClick="onSearch"/>
         </LinearLayout>
 
     </LinearLayout>
