@@ -48,8 +48,6 @@ public class MainActivity extends Activity {
                 this.newTicketUrl = "https://gitlab.com/customcrimp/connected_controller/engineering_requests/issues/new?issue%5Bassignee_id%5D=&issue%5Bmilestone_id%5D=";
                 this.searchTicketUrl = "https://gitlab.com/customcrimp/connected_controller/engineering_requests/issues?scope=all&utf8=✓&state=opened&search=";
                 this.mergeRequestUrl = "https://gitlab.com/customcrimp/connected_controller/plc-2017-connected_controller_programs/merge_requests/";
-                this.wikiUrl
-
                 break;
             case R.id.crimpIq:
                 rightRadioGroup.clearCheck();
@@ -86,12 +84,12 @@ public class MainActivity extends Activity {
 
     public void onOpenTicket(View view){
         Log.d("log",editTextString.getText().toString());
-        if(checked = true)
+        if(checked)
             GoToURL(openTicketUrl);
 
     }
     public void onNewTicket(View view){
-        if(checked = true)
+        if(checked)
             GoToURL(newTicketUrl);
     }
 
@@ -104,11 +102,26 @@ public class MainActivity extends Activity {
         if(checked)
             GoToURL(mergeRequestUrl);
     }
+    public void onWikiClick(View view){
+        GoToURL(wikiUrl,false);
+    }
 
-    private void GoToURL(String url){
-        Uri uri = Uri.parse(url+editTextString.getText().toString());
+    private void GoToURL(String url,boolean concatenate){
+        Uri uri = null;
+        String ticketNumber = (editTextString.getText().toString()).trim();
+        if(concatenate == true) {
+            uri = Uri.parse(url + ticketNumber);
+        }
+
+        else
+        {
+            uri = Uri.parse(url);
+        }
         Intent intent= new Intent(Intent.ACTION_VIEW,uri);
         startActivity(intent);
+    }
+    public void GoToURL(String url){
+        GoToURL(url,true);
     }
     public void clearTextBox(View view){
         if(!textBoxFirstClick){
